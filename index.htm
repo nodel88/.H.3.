@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>HCI</title>
-<link rel="icon" href="favicon.gif" type="image/gif" />
-<link rel=apple-touch-icon href="apple-touch-icon.png" /><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <title>HCI</title>
+<link rel="icon" href="https://hci.cn/favicon.gif" type="image/gif" />
+<link rel=apple-touch-icon href="https://hci.cn/apple-touch-icon.png" />
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 <script>LA.init({id:"L2zDbF9g1PXAIHWx",ck:"L2zDbF9g1PXAIHWx"})</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -119,7 +120,7 @@
       justify-content: center;
       text-align: center;
       padding: clamp(1rem, 3vw, 2rem);
-      max-width: 750px;
+      max-width: 900px;
       width: 100%;
     }
 
@@ -128,7 +129,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: clamp(1rem, 2.5vw, 1.8rem);
+      gap: clamp(1.2rem, 2.5vw, 2rem);
       width: 100%;
       animation: contentElevate 7s ease-in-out infinite;
     }
@@ -172,140 +173,92 @@
       }
     }
 
-    /* 图标行 - 白色羽化光晕 */
-    .icon-row {
+    /* 图标与文字对应网格 */
+    .icon-text-grid {
       display: flex;
-      gap: clamp(1rem, 2.8vw, 2.2rem);
+      gap: clamp(1rem, 2.5vw, 2rem);
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-wrap: wrap;
-      color: #3a3a60;
-      font-size: clamp(1.1rem, 2.3vw, 1.8rem);
-      margin-bottom: 0.2rem;
       width: 100%;
     }
 
-    .icon-row i {
-      transition: all 0.5s ease;
-      animation: iconFloat 5s ease-in-out infinite;
-      opacity: 0.65;
-      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.35));
-    }
-
-    .icon-row i:nth-child(1) {
-      animation-delay: 0s;
-    }
-    .icon-row i:nth-child(2) {
-      animation-delay: 0.35s;
-    }
-    .icon-row i:nth-child(3) {
-      animation-delay: 0.7s;
-    }
-    .icon-row i:nth-child(4) {
-      animation-delay: 1.05s;
-    }
-    .icon-row i:nth-child(5) {
-      animation-delay: 1.4s;
-    }
-    .icon-row i:nth-child(6) {
-      animation-delay: 1.75s;
-    }
-
-    @keyframes iconFloat {
-      0%,
-      100% {
-        opacity: 0.55;
-        transform: translateY(0);
-        filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 14px rgba(255, 255, 255, 0.25));
-      }
-      50% {
-        opacity: 0.95;
-        transform: translateY(-6px);
-        filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 35px rgba(255, 255, 255, 0.5));
-        color: #1a1a38;
-      }
-    }
-
-    /* 中文主标题 - 白色羽化光晕 */
-    .chinese-title {
-      font-size: clamp(0.9rem, 3.2vw, 2.2rem);
-      font-weight: 350;
-      letter-spacing: 0.35em;
-      color: #1a1a35;
-      text-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 55px rgba(255, 255, 255, 0.3);
-      line-height: 1.3;
+    .icon-text-item {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      gap: 0.2rem;
-      width: 100%;
+      justify-content: center;
+      gap: 0.4rem;
+      min-width: clamp(60px, 10vw, 90px);
+      animation: itemFloat 5s ease-in-out infinite;
     }
 
-    .chinese-title span {
-      display: inline-block;
-      animation: titleShimmer 5s ease-in-out infinite;
-    }
-
-    .chinese-title span:nth-child(1) {
+    .icon-text-item:nth-child(1) {
       animation-delay: 0s;
     }
-    .chinese-title span:nth-child(2) {
+    .icon-text-item:nth-child(2) {
       animation-delay: 0.25s;
     }
-    .chinese-title span:nth-child(3) {
+    .icon-text-item:nth-child(3) {
       animation-delay: 0.5s;
     }
-    .chinese-title span:nth-child(4) {
+    .icon-text-item:nth-child(4) {
       animation-delay: 0.75s;
     }
-    .chinese-title span:nth-child(5) {
+    .icon-text-item:nth-child(5) {
       animation-delay: 1s;
     }
-    .chinese-title span:nth-child(6) {
+    .icon-text-item:nth-child(6) {
       animation-delay: 1.25s;
     }
 
-    @keyframes titleShimmer {
+    @keyframes itemFloat {
       0%,
       100% {
-        text-shadow: 0 0 28px rgba(255, 255, 255, 0.45), 0 0 50px rgba(255, 255, 255, 0.25);
-        opacity: 0.88;
+        transform: translateY(0);
       }
       50% {
-        text-shadow: 0 0 45px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 0.45);
-        opacity: 1;
+        transform: translateY(-5px);
       }
     }
 
-    /* 英文副标题 - 白色羽化光晕 */
-    .english-subtitle {
-      font-size: clamp(0.32rem, 0.75vw, 0.48rem);
-      font-weight: 400;
-      letter-spacing: 0.25em;
-      color: #3a3a55;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2);
-      margin-top: -0.5rem;
-      padding-bottom: 0.8rem;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .item-icon {
+      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      color: #3a3a60;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.35));
+      transition: all 0.5s ease;
     }
 
-    /* 通知区域 - 白色羽化光晕 */
+    .item-chinese {
+      font-size: clamp(0.85rem, 1.8vw, 1.3rem);
+      font-weight: 400;
+      color: #1a1a35;
+      letter-spacing: 0.15em;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .item-english {
+      font-size: clamp(0.35rem, 0.7vw, 0.5rem);
+      font-weight: 400;
+      color: #4a4a65;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
+
+    /* 通知区域 - 放大一号 */
     .notice-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: clamp(0.4rem, 0.8vw, 0.6rem);
+      gap: clamp(0.5rem, 1vw, 0.8rem);
       width: 100%;
     }
 
     .notice-cn {
-      font-size: clamp(0.58rem, 1.2vw, 0.98rem);
+      font-size: clamp(0.55rem, 1.2vw, 0.82rem);
       font-weight: 400;
       color: #2a2a42;
       letter-spacing: 0.12em;
@@ -317,7 +270,7 @@
     }
 
     .notice-en {
-      font-size: clamp(0.58rem, 1.2vw, 0.98rem);
+      font-size: clamp(0.4rem, 0.85vw, 0.58rem);
       font-weight: 400;
       color: #4a4a65;
       letter-spacing: 0.08em;
@@ -328,7 +281,7 @@
       width: 100%;
     }
 
-    /* 加载点 - 白色羽化光晕 */
+    /* 加载点 */
     .loading-dots {
       display: flex;
       gap: 0.6rem;
@@ -377,7 +330,7 @@
       }
     }
 
-    /* 联系邮箱 - 白色羽化光晕 */
+    /* 联系邮箱 */
     .contact-email {
       display: flex;
       align-items: center;
@@ -413,7 +366,7 @@
       filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
     }
 
-    /* 底部版权 - 白色羽化光晕 */
+    /* 底部版权 */
     .footer-copyright {
       margin-top: clamp(0.8rem, 1.5vw, 1.2rem);
       display: flex;
@@ -446,11 +399,8 @@
       .content-wrapper {
         gap: 1rem;
       }
-      .icon-row {
-        gap: 0.9rem;
-      }
-      .chinese-title {
-        letter-spacing: 0.18em;
+      .icon-text-grid {
+        gap: 0.8rem;
       }
     }
   </style>
@@ -467,17 +417,52 @@
         <img src="https://hci.cn/hci-logo.svg" alt="HCI Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:clamp(120px,20vw,200px);height:clamp(120px,20vw,200px);border-radius:50%;background:#1a1a35;display:flex;align-items:center;justify-content:center;box-shadow:0 0 55px rgba(255,255,255,0.8);\'><span style=\'font-family:Inter,PingFang SC,sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:600;letter-spacing:0.12em;color:#e8ecf8;\'>HCI</span></div>';">
       </div>
 
-      <!-- 六个主题图标 -->
-      <div class="icon-row">
-        <i class="fas fa-tshirt"></i>
-        <i class="fas fa-utensils"></i>
-        <i class="fas fa-home"></i>
-        <i class="fas fa-car"></i>
-        <i class="fas fa-music"></i>
-        <i class="fas fa-gamepad"></i>
+      <!-- 图标与中英文一一对应 -->
+      <div class="icon-text-grid">
+        <!-- 衣 - Clothing -->
+        <div class="icon-text-item">
+          <i class="fas fa-tshirt item-icon"></i>
+          <span class="item-chinese">衣</span>
+          <span class="item-english">Clothing</span>
+        </div>
+
+        <!-- 食 - Food -->
+        <div class="icon-text-item">
+          <i class="fas fa-utensils item-icon"></i>
+          <span class="item-chinese">食</span>
+          <span class="item-english">Food</span>
+        </div>
+
+        <!-- 住 - Housing -->
+        <div class="icon-text-item">
+          <i class="fas fa-home item-icon"></i>
+          <span class="item-chinese">住</span>
+          <span class="item-english">Housing</span>
+        </div>
+
+        <!-- 行 - Transportation -->
+        <div class="icon-text-item">
+          <i class="fas fa-car item-icon"></i>
+          <span class="item-chinese">行</span>
+          <span class="item-english">Transportation</span>
+        </div>
+
+        <!-- 乐 - Entertainment -->
+        <div class="icon-text-item">
+          <i class="fas fa-music item-icon"></i>
+          <span class="item-chinese">乐</span>
+          <span class="item-english">Entertainment</span>
+        </div>
+
+        <!-- 游 - Game -->
+        <div class="icon-text-item">
+          <i class="fas fa-gamepad item-icon"></i>
+          <span class="item-chinese">游</span>
+          <span class="item-english">Game</span>
+        </div>
       </div>
 
-      <!-- 即将上线通知 -->
+      <!-- 即将上线通知 - 放大一号 -->
       <div class="notice-section">
         <div class="notice-cn">
           新网站即将上线，敬请期待！
