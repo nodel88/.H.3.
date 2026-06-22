@@ -2,19 +2,20 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>HCI</title>
-<link rel="icon" href="https://hci.cn/favicon.gif" type="image/gif" />
-<link rel=apple-touch-icon href="https://hci.cn/apple-touch-icon.png" />
-<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-<script>LA.init({id:"L2zDbF9g1PXAIHWx",ck:"L2zDbF9g1PXAIHWx"})</script>
-	<script type="text/javascript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>HCI · 衣食住行游乐</title>
+  <link rel="icon" href="https://hci.cn/favicon.gif" type="image/gif" />
+  <link rel="apple-touch-icon" href="https://hci.cn/apple-touch-icon.png" />
+  <!-- 统计与 clarity 保留原有逻辑 -->
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"L2zDbF9g1PXAIHWx",ck:"L2zDbF9g1PXAIHWx"})</script>
+  <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "x9g7h72qza");
-</script>
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -95,27 +96,13 @@
     }
 
     @keyframes ambientBreathe {
-      0%,
-      100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.7;
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.3);
-        opacity: 1;
-      }
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+      50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
     }
 
     @keyframes ambientBreathe2 {
-      0%,
-      100% {
-        transform: translate(-50%, -50%) scale(1.05);
-        opacity: 0.55;
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(0.85);
-        opacity: 0.9;
-      }
+      0%, 100% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.55; }
+      50% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.9; }
     }
 
     .main-content {
@@ -142,16 +129,10 @@
     }
 
     @keyframes contentElevate {
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
     }
 
-    /* Logo 容器 */
     .logo-container {
       display: flex;
       flex-direction: column;
@@ -169,8 +150,7 @@
     }
 
     @keyframes logoSoftGlow {
-      0%,
-      100% {
+      0%, 100% {
         filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 55px rgba(255, 255, 255, 0.4));
         opacity: 0.92;
       }
@@ -180,152 +160,118 @@
       }
     }
 
-    /* 图标与文字对应网格 */
+    /* ---------- 响应式网格布局 ---------- */
     .icon-text-grid {
-      display: flex;
-      gap: clamp(1rem, 2.5vw, 2rem);
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      display: grid;
+      /* 默认移动端：3列，两排正好6个 */
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(0.8rem, 2vw, 1.8rem);
+      justify-items: center;
+      align-items: start;
       width: 100%;
+      max-width: 550px;
+      margin: 0 auto;
     }
 
+    /* 每个条目垂直排列 */
     .icon-text-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
-      min-width: clamp(60px, 10vw, 90px);
+      width: 100%;
       animation: itemFloat 5s ease-in-out infinite;
     }
 
-    .icon-text-item:nth-child(1) {
-      animation-delay: 0s;
-    }
-    .icon-text-item:nth-child(2) {
-      animation-delay: 0.25s;
-    }
-    .icon-text-item:nth-child(3) {
-      animation-delay: 0.5s;
-    }
-    .icon-text-item:nth-child(4) {
-      animation-delay: 0.75s;
-    }
-    .icon-text-item:nth-child(5) {
-      animation-delay: 1s;
-    }
-    .icon-text-item:nth-child(6) {
-      animation-delay: 1.25s;
-    }
+    .icon-text-item:nth-child(1) { animation-delay: 0s; }
+    .icon-text-item:nth-child(2) { animation-delay: 0.25s; }
+    .icon-text-item:nth-child(3) { animation-delay: 0.5s; }
+    .icon-text-item:nth-child(4) { animation-delay: 0.75s; }
+    .icon-text-item:nth-child(5) { animation-delay: 1s; }
+    .icon-text-item:nth-child(6) { animation-delay: 1.25s; }
 
     @keyframes itemFloat {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
     .item-icon {
-      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      font-size: clamp(1.5rem, 5vw, 2.4rem);
       color: #3a3a60;
-      opacity: 0.7;
-      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.35));
-      transition: all 0.5s ease;
+      opacity: 0.8;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+      transition: all 0.4s ease;
     }
 
     .item-chinese {
-      font-size: clamp(0.85rem, 1.8vw, 1.3rem);
-      font-weight: 400;
-      color: #1a1a35;
-      letter-spacing: 0.15em;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+      font-weight: 500;
+      color: #1e1e38;
+      letter-spacing: 0.2em;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     }
 
     .item-english {
-      font-size: clamp(0.35rem, 0.7vw, 0.5rem);
+      font-size: clamp(0.45rem, 1.2vw, 0.65rem);
       font-weight: 400;
       color: #4a4a65;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
     }
 
-    /* 通知区域 - 放大一号 */
+    /* 通知区域 */
     .notice-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: clamp(0.5rem, 1vw, 0.8rem);
+      gap: clamp(0.4rem, 1vw, 0.7rem);
       width: 100%;
+      margin-top: clamp(1rem, 2vh, 2rem);
     }
 
     .notice-cn {
-      font-size: clamp(0.55rem, 1.2vw, 0.82rem);
+      font-size: clamp(0.6rem, 1.8vw, 0.95rem);
       font-weight: 400;
       color: #2a2a42;
       letter-spacing: 0.12em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.25);
-      width: 100%;
-			margin-top: 6.6rem;
-			margin-bottom: 0.1rem;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.25);
     }
 
     .notice-en {
-      font-size: clamp(0.4rem, 0.85vw, 0.58rem);
+      font-size: clamp(0.45rem, 1.2vw, 0.7rem);
       font-weight: 400;
       color: #4a4a65;
       letter-spacing: 0.08em;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.45), 0 0 15px rgba(255, 255, 255, 0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.2);
     }
 
-    /* 加载点 */
     .loading-dots {
       display: flex;
       gap: 0.6rem;
       justify-content: center;
       align-items: center;
       margin: 0.8rem 0 0.5rem;
-      width: 100%;
     }
 
     .dot {
-      width: clamp(6px, 1vw, 9px);
-      height: clamp(6px, 1vw, 9px);
+      width: clamp(6px, 1.2vw, 9px);
+      height: clamp(6px, 1.2vw, 9px);
       background: #4a4a72;
       border-radius: 50%;
       animation: dotEthereal 2s ease-in-out infinite;
       box-shadow: 0 0 14px rgba(255, 255, 255, 0.55), 0 0 25px rgba(255, 255, 255, 0.3);
     }
 
-    .dot:nth-child(2) {
-      animation-delay: 0.25s;
-    }
-    .dot:nth-child(3) {
-      animation-delay: 0.5s;
-    }
-    .dot:nth-child(4) {
-      animation-delay: 0.75s;
-    }
-    .dot:nth-child(5) {
-      animation-delay: 1s;
-    }
+    .dot:nth-child(2) { animation-delay: 0.25s; }
+    .dot:nth-child(3) { animation-delay: 0.5s; }
+    .dot:nth-child(4) { animation-delay: 0.75s; }
+    .dot:nth-child(5) { animation-delay: 1s; }
 
     @keyframes dotEthereal {
-      0%,
-      80%,
-      100% {
+      0%, 80%, 100% {
         transform: scale(0.5);
         opacity: 0.35;
         background: #3a3a62;
@@ -339,28 +285,26 @@
       }
     }
 
-    /* 联系邮箱 */
     .contact-email {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
-      width: 100%;
-	  margin-top: 6.6rem;
-      padding: clamp(0.6rem, 1vw, 0.8rem) 0;
+      margin-top: clamp(2rem, 4vh, 3rem);
+      padding: clamp(0.5rem, 1vw, 0.8rem) 0;
     }
 
     .contact-email a {
-      font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+      font-size: clamp(0.7rem, 1.8vw, 0.95rem);
       font-weight: 400;
       color: #3a3a58;
       text-decoration: none;
       letter-spacing: 0.05em;
-      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.45), 0 0 15px rgba(255, 255, 255, 0.2);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
     }
 
     .contact-email a:hover {
@@ -369,26 +313,23 @@
     }
 
     .contact-email i {
-      font-size: clamp(0.65rem, 1.3vw, 0.85rem);
-      opacity: 0.75;
+      font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+      opacity: 0.8;
       color: #4a4a68;
-      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
     }
 
-    /* 底部版权 */
     .footer-copyright {
-      margin-top: clamp(0.8rem, 1.5vw, 1.2rem);
+      margin-top: clamp(0.8rem, 2vh, 1.5rem);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.3rem;
+      gap: 0.25rem;
       color: #5a5a78;
-      font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+      font-size: clamp(0.65rem, 1.4vw, 0.85rem);
       letter-spacing: 0.08em;
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.2);
-      padding-top: clamp(0.8rem, 1.5vw, 1.2rem);
-      width: 100%;
+      padding-top: clamp(0.8rem, 2vh, 1.5rem);
     }
 
     .footer-copyright .brand {
@@ -400,16 +341,26 @@
     .footer-copyright .year {
       font-weight: 400;
       color: #4a4a68;
-      font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+      font-size: clamp(0.75rem, 1.5vw, 0.95rem);
       letter-spacing: 0.12em;
     }
 
-    @media (max-width: 600px) {
-      .content-wrapper {
-        gap: 1rem;
-      }
+    /* ========== PC/宽屏响应式：一排显示6个 ========== */
+    @media (min-width: 768px) {
       .icon-text-grid {
-        gap: 0.8rem;
+        grid-template-columns: repeat(6, 1fr); /* 6列，一行显示全部 */
+        max-width: 800px; /* 增加最大宽度以适应6列 */
+        gap: clamp(1rem, 2.5vw, 2rem);
+      }
+    }
+
+    /* 针对极小屏微调，保持3列 */
+    @media (max-width: 400px) {
+      .icon-text-grid {
+        gap: 0.6rem;
+      }
+      .item-icon {
+        font-size: clamp(1.3rem, 6vw, 2rem);
       }
     }
   </style>
@@ -421,12 +372,12 @@
 
   <div class="main-content">
     <div class="content-wrapper">
-      <!-- Logo -->
+      <!-- Logo 区域 -->
       <div class="logo-container">
         <img src="https://hci.cn/hci-logo.svg" alt="HCI Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:clamp(120px,20vw,200px);height:clamp(120px,20vw,200px);border-radius:50%;background:#1a1a35;display:flex;align-items:center;justify-content:center;box-shadow:0 0 55px rgba(255,255,255,0.8);\'><span style=\'font-family:Inter,PingFang SC,sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:600;letter-spacing:0.12em;color:#e8ecf8;\'>HCI</span></div>';">
       </div>
 
-      <!-- 图标与中英文一一对应 -->
+      <!-- 图标与文字：响应式网格，移动3列，PC 6列（一排） -->
       <div class="icon-text-grid">
         <!-- 衣 - Clothing -->
         <div class="icon-text-item">
@@ -434,35 +385,30 @@
           <span class="item-chinese">衣</span>
           <span class="item-english">Clothing</span>
         </div>
-
         <!-- 食 - Food -->
         <div class="icon-text-item">
           <i class="fas fa-utensils item-icon"></i>
           <span class="item-chinese">食</span>
           <span class="item-english">Food</span>
         </div>
-
         <!-- 住 - Housing -->
         <div class="icon-text-item">
           <i class="fas fa-home item-icon"></i>
           <span class="item-chinese">住</span>
           <span class="item-english">Housing</span>
         </div>
-
         <!-- 行 - Transportation -->
         <div class="icon-text-item">
           <i class="fas fa-car item-icon"></i>
           <span class="item-chinese">行</span>
           <span class="item-english">Transportation</span>
         </div>
-
         <!-- 乐 - Entertainment -->
         <div class="icon-text-item">
           <i class="fas fa-music item-icon"></i>
           <span class="item-chinese">乐</span>
           <span class="item-english">Entertainment</span>
         </div>
-
         <!-- 游 - Game -->
         <div class="icon-text-item">
           <i class="fas fa-gamepad item-icon"></i>
@@ -471,17 +417,13 @@
         </div>
       </div>
 
-      <!-- 即将上线通知 - 放大一号 -->
+      <!-- 通知 -->
       <div class="notice-section">
-        <div class="notice-cn">
-          新网站即将上线，敬请期待！
-        </div>
-        <div class="notice-en">
-          The new website is coming soon, Stay tuned!
-        </div>
+        <div class="notice-cn">新网站即将上线，敬请期待！</div>
+        <div class="notice-en">The new website is coming soon, Stay tuned!</div>
       </div>
 
-      <!-- 动态加载点 -->
+      <!-- 加载点 -->
       <div class="loading-dots">
         <div class="dot"></div>
         <div class="dot"></div>
@@ -498,7 +440,7 @@
         </a>
       </div>
 
-      <!-- 底部版权信息 -->
+      <!-- 版权 -->
       <div class="footer-copyright">
         <span class="brand">Copyright © HCI</span>
         <span class="year">2026</span>
@@ -530,7 +472,6 @@
 
       function drawWaterBackground(time) {
         wCtx.clearRect(0, 0, wWidth, wHeight);
-
         const baseGrad = wCtx.createLinearGradient(0, 0, wWidth, wHeight);
         baseGrad.addColorStop(0, '#e2e8f6');
         baseGrad.addColorStop(0.35, '#ecf0f8');
@@ -544,24 +485,20 @@
           const cx = ws.x * wWidth;
           const cy = ws.y * wHeight;
           const currentPhase = ws.phase + time * 0.001 * ws.speed;
-
           const maxRings = 14;
           for (let ring = 0; ring < maxRings; ring++) {
             const baseRadius = (ring + 1) * (ws.radius / maxRings);
             const ripple = Math.sin(baseRadius * ws.frequency - currentPhase + ring * 0.8) * ws.amplitude * 0.5;
             const radius = baseRadius + ripple;
-
             const alpha = Math.max(0, 0.09 - ring * 0.006);
             const hue = 215 + ring * 3;
             const saturation = 35 + ring * 2;
             const lightness = 78 - ring * 1.5;
-
             wCtx.beginPath();
             wCtx.arc(cx, cy, radius, 0, Math.PI * 2);
             wCtx.strokeStyle = `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`;
             wCtx.lineWidth = 1.3;
             wCtx.stroke();
-
             if (ring < 5) {
               wCtx.beginPath();
               wCtx.arc(cx, cy, radius * 0.7, 0, Math.PI * 2);
@@ -570,7 +507,6 @@
               wCtx.stroke();
             }
           }
-
           const centerGlow = wCtx.createRadialGradient(cx, cy, 0, cx, cy, 80);
           centerGlow.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
           centerGlow.addColorStop(0.5, 'rgba(255, 255, 255, 0.2)');
